@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
 const GeneralInformation = (props) => {
-    const [value, setValue] = useState("");
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
 
     return (
         <div>
@@ -14,11 +16,32 @@ const GeneralInformation = (props) => {
             id="fullName"
             name="fullName"
             placeholder="First and last name"
-            value={value}
-            onChange={(event) => setValue(event.target.value)}
+            value={fullName}
+            onChange={(event) => setFullName(event.target.value)}
+            />
+            <label for="email">Email</label>
+            <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            />
+            <input
+            type="text"
+            id="phonenNumber"
+            name="phoneNumber"
+            placeholder="123 455 5555"
+            value={phoneNumber}
+            onChange={(event) => setPhoneNumber(event.target.value)}
             />
         </form>
-        <h1>{value}</h1>
+        <h1>{fullName} <br />
+            {email} <br />
+            {phoneNumber}
+            </h1>
+
         </div>
         
     )
